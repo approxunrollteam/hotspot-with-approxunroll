@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <code-assistance-data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <code-model-enabled>true</code-model-enabled>
+    </code-assistance-data>
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>0</activeConfTypeElem>
+        <activeConfIndexElem>1</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
+        <file>
+            <url>hotspot/src/share/vm/opto/loopTransform.cpp</url>
+            <bookmark id="1">
+                <name/>
+                <line>666</line>
+                <key/>
+            </bookmark>
+            <bookmark id="2">
+                <name/>
+                <line>1341</line>
+                <key/>
+            </bookmark>
+            <bookmark id="3">
+                <name/>
+                <line>2588</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/phaseX.cpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/loopnode.cpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/node.cpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/degradedUnrollingKit.cpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/memnode.hpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/phasetype.hpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/degradedUnrollingKit.hpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/loopTransform.cpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/launcher/main.c</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/runtime/stubRoutines.hpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/compile.cpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/phaseX.hpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/cpu/x86/vm/vm_version_x86.cpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/domgraph.cpp</file>
+            <file>file:/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot/src/share/vm/opto/arraycopynode.cpp</file>
+        </group>
+    </open-files>
+</project-private>

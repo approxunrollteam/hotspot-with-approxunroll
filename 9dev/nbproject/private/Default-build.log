@@ -1,0 +1,7 @@
+Error: No CONF given, but more than one configuration found.
+Available configurations in /media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build:
+* linux-x86_64-normal-server-slowdebug
+* linux-x86_64-normal-server-release
+Please retry building with CONF=<config pattern> (or SPEC=<spec file>).
+
+/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/make/Init.gmk:124: *** Cannot continue.  Stop.

@@ -1,0 +1,700 @@
+#
+# Copyright (c) 2011, 2016, Oracle and/or its affiliates. All rights reserved.
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+#
+# This code is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 only, as
+# published by the Free Software Foundation.  Oracle designates this
+# particular file as subject to the "Classpath" exception as provided
+# by Oracle in the LICENSE file that accompanied this code.
+#
+# This code is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# version 2 for more details (a copy is included in the LICENSE file that
+# accompanied this code).
+#
+# You should have received a copy of the GNU General Public License version
+# 2 along with this work; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+# Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+# or visit www.oracle.com if you need additional information or have any
+# questions.
+#
+
+# Configured Mon Nov  7 09:26:38 CST 2016 to build
+# for target system linux-x86_64
+#   (called x86_64-unknown-linux-gnu by autoconf)
+# on build system linux-x86_64
+#   (called x86_64-unknown-linux-gnu by autoconf)
+# using 'configure --with-debug-level=slowdebug --with-target-bits=64 --with-native-debug-symbols=external'
+
+# The command line given to configure.
+CONFIGURE_COMMAND_LINE:=--with-debug-level=slowdebug --with-target-bits=64 --with-native-debug-symbols=external
+
+# A self-referential reference to this file.
+SPEC:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug/spec.gmk
+
+# SPACE and COMMA are defined in MakeBase.gmk, but they are also used in
+# some definitions here, and are needed if MakeBase.gmk is not included before
+# this file.
+X:=
+SPACE:=$(X) $(X)
+COMMA:=,
+
+# What make to use for main processing, after bootstrapping top-level Makefile.
+MAKE := /usr/bin/make
+
+# The default make arguments
+MAKE_ARGS = $(MAKE_LOG_FLAGS) -r -R -I $(TOPDIR)/make/common SPEC=$(SPEC) \
+    MAKE_LOG_FLAGS="$(MAKE_LOG_FLAGS)" LOG_LEVEL=$(LOG_LEVEL)
+
+OUTPUT_SYNC_SUPPORTED:=true
+OUTPUT_SYNC:=none
+
+# Override the shell with bash
+BASH:=/bin/bash
+BASH_ARGS:= -o pipefail -e
+SHELL:=$(BASH) $(BASH_ARGS)
+
+# The "human readable" name of this configuration
+CONF_NAME:=linux-x86_64-normal-server-slowdebug
+
+# The built jdk will run in this target system.
+OPENJDK_TARGET_OS:=linux
+OPENJDK_TARGET_OS_TYPE:=unix
+OPENJDK_TARGET_OS_ENV:=linux
+
+OPENJDK_TARGET_CPU:=x86_64
+OPENJDK_TARGET_CPU_ARCH:=x86
+OPENJDK_TARGET_CPU_BITS:=64
+OPENJDK_TARGET_CPU_ENDIAN:=little
+
+COMPILE_TYPE:=native
+
+# Legacy support
+OPENJDK_TARGET_CPU_ISADIR:=
+OPENJDK_TARGET_CPU_LIBDIR:=/amd64
+OPENJDK_TARGET_CPU_LEGACY:=amd64
+OPENJDK_TARGET_CPU_LEGACY_LIB:=amd64
+OPENJDK_TARGET_CPU_OSARCH:=amd64
+OPENJDK_TARGET_CPU_JLI_CFLAGS:=-DLIBARCHNAME='"amd64"'
+OPENJDK_TARGET_OS_EXPORT_DIR:=unix
+
+# We are building on this build system.
+# When not cross-compiling, it is the same as the target.
+OPENJDK_BUILD_OS:=linux
+OPENJDK_BUILD_OS_TYPE:=unix
+OPENJDK_BUILD_OS_ENV:=linux
+
+OPENJDK_BUILD_CPU:=x86_64
+OPENJDK_BUILD_CPU_ARCH:=x86
+OPENJDK_BUILD_CPU_BITS:=64
+OPENJDK_BUILD_CPU_ENDIAN:=little
+
+# Legacy OS values for use in release file.
+REQUIRED_OS_NAME:=Linux
+REQUIRED_OS_VERSION:=2.6
+
+OPENJDK=true
+LIBM:=-lm
+LIBDL:=-ldl 
+
+# colon or semicolon
+PATH_SEP:=:
+
+# Save the original path before replacing it with the Visual Studio tools
+ORIGINAL_PATH:=/home/elmarce/bin:/home/elmarce/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ifeq ($(OPENJDK_TARGET_OS), windows)
+  # On Windows, the Visual Studio toolchain needs the PATH to be adjusted
+  # to include Visual Studio tools (this needs to be in cygwin/msys style).
+  export PATH:=
+endif
+
+SYSROOT_CFLAGS := 
+SYSROOT_LDFLAGS := 
+
+# The top-level directory of the forest (SRC_ROOT is a traditional alias)
+TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev
+# These two versions of TOPDIR are used in string comparisons
+ORIGINAL_TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev
+CANONICAL_TOPDIR:=/media/elmarce/Windows/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev
+SRC_ROOT:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev
+
+OUTPUT_ROOT:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug
+JDK_TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk
+LANGTOOLS_TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/langtools
+CORBA_TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/corba
+JAXP_TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jaxp
+JAXWS_TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jaxws
+HOTSPOT_TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/hotspot
+NASHORN_TOPDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/nashorn
+COPYRIGHT_YEAR:=2016
+
+# New (JEP-223) version information
+
+## Building blocks of the version string
+# First three version numbers, with well-specified meanings (numerical)
+VERSION_MAJOR := 9
+VERSION_MINOR := 0
+VERSION_SECURITY := 0
+# Optional fourth element for use by OpenJDK consumers (numerical)
+VERSION_PATCH := 0
+# The pre-release identifier (string)
+VERSION_PRE := internal
+# The build number (numerical)
+VERSION_BUILD := 0
+# Optional build information (string)
+VERSION_OPT := 2016-11-07-092639.elmarce.9dev
+
+## Composite variables
+# The version number as a dot separated sequence of numbers, e.g. 9.0.1
+VERSION_NUMBER := 9
+# VERSION_NUMBER but always with exactly 4 positions, with 0 for empty positions.
+VERSION_NUMBER_FOUR_POSITIONS := 9.0.0.0
+# The complete version string, with additional build information
+VERSION_STRING := 9-internal+0-2016-11-07-092639.elmarce.9dev
+# The short version string, without trailing zeroes and just PRE, if present.
+VERSION_SHORT := 9-internal
+# The Java specification version. It should be equal to version number.
+VERSION_SPECIFICATION := 9
+# A GA version is defined by the PRE string being empty. Rather than testing for
+# that, this variable defines it with true/false.
+VERSION_IS_GA := false
+
+# Convenience CFLAGS settings for passing version information into native programs.
+VERSION_CFLAGS := \
+    -DVERSION_MAJOR=$(VERSION_MAJOR) \
+    -DVERSION_MINOR=$(VERSION_MINOR) \
+    -DVERSION_SECURITY=$(VERSION_SECURITY) \
+    -DVERSION_PATCH=$(VERSION_PATCH) \
+    -DVERSION_PRE='"$(VERSION_PRE)"' \
+    -DVERSION_BUILD=$(VERSION_BUILD) \
+    -DVERSION_OPT='"$(VERSION_OPT)"' \
+    -DVERSION_NUMBER='"$(VERSION_NUMBER)"' \
+    -DVERSION_STRING='"$(VERSION_STRING)"' \
+    -DVERSION_SHORT='"$(VERSION_SHORT)"' \
+    -DVERSION_SPECIFICATION='"$(VERSION_SPECIFICATION)"' \
+    #
+
+# Platform naming variables
+LAUNCHER_NAME:=openjdk
+PRODUCT_NAME:=OpenJDK
+PRODUCT_SUFFIX:=Runtime Environment
+JDK_RC_PLATFORM_NAME:=Platform
+COMPANY_NAME:=N/A
+MACOSX_BUNDLE_NAME_BASE=OpenJDK
+MACOSX_BUNDLE_ID_BASE=net.java.openjdk
+USERNAME:=elmarce
+
+# Different naming strings generated from the above information.
+RUNTIME_NAME=$(PRODUCT_NAME) $(PRODUCT_SUFFIX)
+
+# How to compile the code: release, fastdebug or slowdebug
+DEBUG_LEVEL:=slowdebug
+
+# This is the JDK variant to build.
+# The JDK variant is a name for a specific set of modules to be compiled for the JDK.
+JDK_VARIANT:=normal
+
+# Should we compile support for running with a graphical UI? (ie headful)
+# Should we compile support for running without? (ie headless)
+SUPPORT_HEADFUL:=yes
+SUPPORT_HEADLESS:=yes
+# Legacy defines controlled by the SUPPORT_HEADLESS and SUPPORT_HEADFUL options.
+BUILD_HEADLESS:=true
+
+# These are the libjvms that we want to build.
+# The java launcher uses the default.
+# The others can be selected by specifying -client -server -minimal1 -zero or -zeroshark
+# on the java launcher command line.
+JVM_VARIANTS:=,server,
+JVM_VARIANT_SERVER:=true
+JVM_VARIANT_CLIENT:=false
+JVM_VARIANT_MINIMAL1:=false
+JVM_VARIANT_ZERO:=false
+JVM_VARIANT_ZEROSHARK:=false
+JVM_VARIANT_CORE:=false
+
+# Universal binaries on macosx
+MACOSX_UNIVERSAL=
+
+# Legacy setting: -debug or -fastdebug
+# Still used in version string...
+BUILD_VARIANT_RELEASE:=-debug
+
+# JDK_OUTPUTDIR specifies where a working jvm is built.
+# You can run $(JDK_OUTPUTDIR)/bin/java
+# Though the layout of the contents of $(JDK_OUTPUTDIR) is not
+# yet the same as a default installation.
+#
+# When you run "make install" it will create the standardized
+# layout for the jdk and the jre inside the IMAGES_OUTPUTDIR subdir.
+# Then it will copy the contents of the jdk into the installation
+# directory.
+
+BUILD_OUTPUT:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug
+# Colon left out to be able to override IMAGES_OUTPUTDIR for bootcycle-images
+SUPPORT_OUTPUTDIR=$(BUILD_OUTPUT)/support
+BUILDTOOLS_OUTPUTDIR=$(BUILD_OUTPUT)/buildtools
+
+HOTSPOT_OUTPUTDIR=$(BUILD_OUTPUT)/hotspot
+JDK_OUTPUTDIR=$(BUILD_OUTPUT)/jdk
+IMAGES_OUTPUTDIR=$(BUILD_OUTPUT)/images
+TESTMAKE_OUTPUTDIR=$(BUILD_OUTPUT)/test-make
+MAKESUPPORT_OUTPUTDIR=$(BUILD_OUTPUT)/make-support
+# This does not get overridden in a bootcycle build
+CONFIGURESUPPORT_OUTPUTDIR:=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug/configure-support
+
+HOTSPOT_DIST=/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug/hotspot/dist
+
+BUILD_HOTSPOT=true
+
+# The boot jdk to use. This is overridden in bootcycle-spec.gmk. Make sure to keep
+# it in sync.
+BOOT_JDK:=/usr/lib/jvm/java-8-openjdk-amd64
+
+# When compiling Java source to be run by the boot jdk
+# use these extra flags, eg -source 6 -target 6
+BOOT_JDK_SOURCETARGET:=-source 8 -target 8
+
+# Information about the build system
+NUM_CORES:=4
+MEMORY_SIZE:=15928
+# Enable sjavac support = use a javac server,
+# multi core javac compilation and dependency tracking.
+ENABLE_SJAVAC:=no
+ENABLE_JAVAC_SERVER:=yes
+# Store sjavac server synchronization files here, and
+# the sjavac server log files.
+SJAVAC_SERVER_DIR=$(MAKESUPPORT_OUTPUTDIR)/javacservers
+
+# Number of parallel jobs to use for compilation
+JOBS?=4
+TEST_JOBS?=0
+
+# Default make target
+DEFAULT_MAKE_TARGET:=exploded-image
+
+FREETYPE_LIBS:=-lfreetype
+FREETYPE_CFLAGS:=-I/usr/include/freetype2
+FREETYPE_BUNDLE_LIB_PATH=
+CUPS_CFLAGS:=
+ALSA_LIBS:=-lasound
+ALSA_CFLAGS:=-I/usr/include/alsa
+LIBFFI_LIBS:=
+LIBFFI_CFLAGS:=
+
+PACKAGE_PATH=/opt/local
+
+# Source file for cacerts
+CACERTS_FILE=
+
+# Enable unlimited crypto policy
+UNLIMITED_CRYPTO=false
+
+GCOV_ENABLED=false
+
+# Necessary additional compiler flags to compile X11
+X_CFLAGS:=
+X_LIBS:=
+
+# The lowest required version of macosx to enforce compatiblity for
+MACOSX_VERSION_MIN=
+
+# Toolchain type: gcc, clang, solstudio, lxc, microsoft...
+TOOLCHAIN_TYPE:=gcc
+TOOLCHAIN_VERSION := 
+
+# Option used to tell the compiler whether to create 32- or 64-bit executables
+COMPILER_TARGET_BITS_FLAG:=-m
+COMPILER_SUPPORTS_TARGET_BITS_FLAG=true
+
+# Option used to pass a command file to the compiler
+COMPILER_COMMAND_FILE_FLAG:=@
+
+CC_OUT_OPTION:=-o$(SPACE)
+EXE_OUT_OPTION:=-o$(SPACE)
+LD_OUT_OPTION:=-o$(SPACE)
+AR_OUT_OPTION:=rcs$(SPACE)
+
+# Flags used for overriding the default opt setting for a C/C++ source file.
+C_O_FLAG_HIGHEST:=-O0
+C_O_FLAG_HI:=-O0
+C_O_FLAG_NORM:=-O0
+C_O_FLAG_NONE:=-O0
+CXX_O_FLAG_HIGHEST:=-O0
+CXX_O_FLAG_HI:=-O0
+CXX_O_FLAG_NORM:=-O0
+CXX_O_FLAG_NONE:=-O0
+
+C_FLAG_DEPS:=-MMD -MF
+CXX_FLAG_DEPS:=-MMD -MF
+
+DISABLE_WARNING_PREFIX := -Wno-
+CFLAGS_WARNINGS_ARE_ERRORS:=-Werror
+
+# A global flag (true or false) determining if native warnings are considered errors.
+WARNINGS_AS_ERRORS := true
+
+CFLAGS_CCACHE:=
+
+# Tools that potentially need to be cross compilation aware.
+CC:=   /usr/bin/gcc
+
+# CFLAGS used to compile the jdk native libraries (C-code)
+CFLAGS_JDKLIB:=  -Wall -Wextra -Wno-unused -Wno-unused-parameter -Wformat=2         -pipe -D_GNU_SOURCE -D_REENTRANT -D_LARGEFILE64_SOURCE -fno-omit-frame-pointer -D_LP64=1 -D_LITTLE_ENDIAN -DLINUX -DARCH='"amd64"' -Damd64 -DDEBUG       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/linux/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/libjava       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/libjava   -fno-strict-aliasing -g -fstack-protector-all --param ssp-buffer-size=1 -fPIC 
+CXXFLAGS_JDKLIB:=  -Wall -Wextra -Wno-unused -Wno-unused-parameter -Wformat=2         -pipe -D_GNU_SOURCE -D_REENTRANT -D_LARGEFILE64_SOURCE -fno-omit-frame-pointer -D_LP64=1 -D_LITTLE_ENDIAN -DLINUX -DARCH='"amd64"' -Damd64 -DDEBUG       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/linux/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/libjava       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/libjava   -g -fstack-protector-all --param ssp-buffer-size=1 -fPIC 
+
+# CFLAGS used to compile the jdk native launchers (C-code)
+CFLAGS_JDKEXE:=  -Wall -Wextra -Wno-unused -Wno-unused-parameter -Wformat=2         -pipe -D_GNU_SOURCE -D_REENTRANT -D_LARGEFILE64_SOURCE -fno-omit-frame-pointer -D_LP64=1 -D_LITTLE_ENDIAN -DLINUX -DARCH='"amd64"' -Damd64 -DDEBUG       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/linux/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/libjava       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/libjava   -fno-strict-aliasing -g -fstack-protector-all --param ssp-buffer-size=1
+CXXFLAGS_JDKEXE:=  -Wall -Wextra -Wno-unused -Wno-unused-parameter -Wformat=2         -pipe -D_GNU_SOURCE -D_REENTRANT -D_LARGEFILE64_SOURCE -fno-omit-frame-pointer -D_LP64=1 -D_LITTLE_ENDIAN -DLINUX -DARCH='"amd64"' -Damd64 -DDEBUG       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/linux/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/libjava       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/libjava   -g -fstack-protector-all --param ssp-buffer-size=1
+
+CXX:=   /usr/bin/g++
+
+CPP:= /usr/bin/gcc -E
+
+# The linker can be gcc or ld on unix systems, or link.exe on windows systems.
+LD:= /usr/bin/gcc
+
+# Xcode SDK path
+SDKROOT:=
+
+# The linker on older SuSE distros (e.g. on SLES 10) complains with:
+# "Invalid version tag `SUNWprivate_1.1'. Only anonymous version tag is allowed in executable."
+# if feeded with a version script which contains named tags.
+USING_BROKEN_SUSE_LD:=no
+
+# LDFLAGS used to link the jdk native libraries (C-code)
+LDFLAGS_JDKLIB:=  -Wl,--hash-style=both -Wl,-z,defs -Wl,-z,now -Wl,-z,relro -shared         -L/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug/support/modules_libs/java.base/amd64 -L/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug/support/modules_libs/java.base/amd64/server
+JDKLIB_LIBS:=-ljava -ljvm
+
+# LDFLAGS used to link the jdk native launchers (C-code)
+LDFLAGS_JDKEXE:=  -Wl,--hash-style=both -Wl,-z,defs -Wl,-z,now -Wl,-z,relro -Wl,--allow-shlib-undefined
+JDKEXE_LIBS:=
+
+# LDFLAGS specific to C++ linking.
+LDFLAGS_CXX_JDK:= -Wl,-z,now -Wl,-z,relro
+
+# Sometimes a different linker is needed for c++ libs
+LDCXX:= /usr/bin/gcc
+# The flags for linking libstdc++ linker.
+LIBCXX:= -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
+
+# Compiler and linker flags used when building native tests
+CFLAGS_TESTLIB:=  -Wall -Wextra -Wno-unused -Wno-unused-parameter -Wformat=2         -pipe -D_GNU_SOURCE -D_REENTRANT -D_LARGEFILE64_SOURCE -fno-omit-frame-pointer -D_LP64=1 -D_LITTLE_ENDIAN -DLINUX -DARCH='"amd64"' -Damd64 -DDEBUG       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/linux/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/libjava       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/libjava   -fno-strict-aliasing -g -fstack-protector-all --param ssp-buffer-size=1 -fPIC 
+CXXFLAGS_TESTLIB:=  -Wall -Wextra -Wno-unused -Wno-unused-parameter -Wformat=2         -pipe -D_GNU_SOURCE -D_REENTRANT -D_LARGEFILE64_SOURCE -fno-omit-frame-pointer -D_LP64=1 -D_LITTLE_ENDIAN -DLINUX -DARCH='"amd64"' -Damd64 -DDEBUG       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/linux/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/libjava       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/libjava   -g -fstack-protector-all --param ssp-buffer-size=1 -fPIC 
+CFLAGS_TESTEXE:=  -Wall -Wextra -Wno-unused -Wno-unused-parameter -Wformat=2         -pipe -D_GNU_SOURCE -D_REENTRANT -D_LARGEFILE64_SOURCE -fno-omit-frame-pointer -D_LP64=1 -D_LITTLE_ENDIAN -DLINUX -DARCH='"amd64"' -Damd64 -DDEBUG       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/linux/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/libjava       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/libjava   -fno-strict-aliasing -g -fstack-protector-all --param ssp-buffer-size=1
+CXXFLAGS_TESTEXE:=  -Wall -Wextra -Wno-unused -Wno-unused-parameter -Wformat=2         -pipe -D_GNU_SOURCE -D_REENTRANT -D_LARGEFILE64_SOURCE -fno-omit-frame-pointer -D_LP64=1 -D_LITTLE_ENDIAN -DLINUX -DARCH='"amd64"' -Damd64 -DDEBUG       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/linux/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/include       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/share/native/libjava       -I/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/jdk/src/java.base/unix/native/libjava   -g -fstack-protector-all --param ssp-buffer-size=1
+LDFLAGS_TESTLIB:=  -Wl,--hash-style=both -Wl,-z,defs -Wl,-z,now -Wl,-z,relro -shared         -L/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug/support/modules_libs/java.base/amd64 -L/home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug/support/modules_libs/java.base/amd64/server
+LDFLAGS_TESTEXE:=  -Wl,--hash-style=both -Wl,-z,defs -Wl,-z,now -Wl,-z,relro -Wl,--allow-shlib-undefined
+
+# BUILD_CC/BUILD_LD is a compiler/linker that generates code that is runnable on the
+# build platform.
+BUILD_CC:=  /usr/bin/gcc
+BUILD_CXX:=  /usr/bin/g++
+BUILD_LD:= /usr/bin/gcc
+BUILD_LDCXX:= /usr/bin/g++
+BUILD_AS:= /usr/bin/gcc -c
+BUILD_AR:= /usr/bin/ar
+BUILD_NM:= /usr/bin/nm
+BUILD_SYSROOT_CFLAGS:=
+BUILD_SYSROOT_LDFLAGS:=
+
+AS:= /usr/bin/gcc -c
+
+# AR is used to create a static library (is ar in unix, lib.exe in windows)
+AR:= /usr/bin/ar
+ARFLAGS:=
+
+NM:=/usr/bin/nm
+GNM:=/usr/bin/nm
+STRIP:=/usr/bin/strip
+
+LIPO:=
+
+# Options to linker to specify a mapfile.
+# (Note absence of := assignment, because we do not want to evaluate the macro body here)
+SET_SHARED_LIBRARY_MAPFILE=-Wl,-version-script=$1
+
+# Options for C/CXX compiler to be used if linking is performed
+#   using reorder file
+C_FLAG_REORDER:=
+CXX_FLAG_REORDER:=
+
+#
+# Options for generating debug symbols
+COMPILE_WITH_DEBUG_SYMBOLS := true
+COPY_DEBUG_SYMBOLS := true
+ZIP_EXTERNAL_DEBUG_SYMBOLS := false
+
+CFLAGS_DEBUG_SYMBOLS:=-g
+CXXFLAGS_DEBUG_SYMBOLS:=-g
+
+#
+# Compress (or not) jars
+COMPRESS_JARS=false
+
+# Options to linker to specify the library name.
+# (Note absence of := assignment, because we do not want to evaluate the macro body here)
+SET_SHARED_LIBRARY_NAME=-Wl,-soname=$1
+
+SHARED_LIBRARY_FLAGS=-shared
+
+# Set origin using the linker, ie use the relative path to the dependent library to find the dependees.
+# (Note absence of := assignment, because we do not want to evaluate the macro body here)
+SET_SHARED_LIBRARY_ORIGIN=-Wl,-z,origin -Wl,-rpath,\$$$$ORIGIN$1
+SET_EXECUTABLE_ORIGIN=-Wl,-rpath,\$$$$ORIGIN$1
+
+# Different OS:es have different ways of naming shared libraries.
+# The SHARED_LIBRARY macro takes "verify" as and argument and returns:
+#    "libverify.so" or "libverify.dylib" or "verify.dll" depending on platform.
+# (Note absence of := assignment, because we do not want to evaluate the macro body here)
+SHARED_LIBRARY=lib$1.so
+STATIC_LIBRARY=lib$1.a
+LIBRARY_PREFIX:=lib
+SHARED_LIBRARY_SUFFIX:=.so
+STATIC_LIBRARY_SUFFIX:=.a
+EXE_SUFFIX:=
+OBJ_SUFFIX:=.o
+STATIC_BUILD:=false
+
+STRIPFLAGS:=-g
+
+JAVA_FLAGS:= 
+JAVA_FLAGS_BIG:= -Xms64M -Xmx1600M -XX:ThreadStackSize=1536
+JAVA_FLAGS_SMALL:= -XX:+UseSerialGC -Xms32M -Xmx512M
+JAVA_FLAGS_JAVAC:= -XX:+UseSerialGC -Xms32M -Xmx512M
+JAVA_TOOL_FLAGS_SMALL:= -J-XX:+UseSerialGC -J-Xms32M -J-Xmx512M
+SJAVAC_SERVER_JAVA_FLAGS:= -d64 -Xms512M -Xmx2048M
+
+# The *_CMD variables are defined separately to be easily overridden in bootcycle-spec.gmk
+# for bootcycle-images build. Make sure to keep them in sync. Do not use the *_CMD
+# versions of the variables directly.
+JAVA_CMD:=/usr/lib/jvm/java-8-openjdk-amd64/bin/java
+JAVAC_CMD:=/usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+JAVAH_CMD:=/usr/lib/jvm/java-8-openjdk-amd64/bin/javah
+JAR_CMD:=/usr/lib/jvm/java-8-openjdk-amd64/bin/jar
+JARSIGNER_CMD:=/usr/lib/jvm/java-8-openjdk-amd64/bin/jarsigner
+SJAVAC_SERVER_JAVA_CMD:=/usr/lib/jvm/java-8-openjdk-amd64/bin/java
+# These variables are meant to be used. They are defined with = instead of := to make
+# it possible to override only the *_CMD variables.
+JAVA= $(JAVA_CMD) $(JAVA_FLAGS_BIG) $(JAVA_FLAGS)
+JAVA_SMALL= $(JAVA_CMD) $(JAVA_FLAGS_SMALL) $(JAVA_FLAGS)
+JAVA_JAVAC= $(JAVA_CMD) $(JAVA_FLAGS_JAVAC) $(JAVA_FLAGS)
+JAVAC= $(JAVAC_CMD)
+JAVAH= $(JAVAH_CMD)
+JAR= $(JAR_CMD)
+JARSIGNER= $(JARSIGNER_CMD)
+# A specific java binary with specific options can be used to run
+# the long running background sjavac servers and other long running tasks.
+SJAVAC_SERVER_JAVA=  $(SJAVAC_SERVER_JAVA_CMD) \
+    $(SJAVAC_SERVER_JAVA_FLAGS)
+
+# Hotspot sets this variable before reading the SPEC when compiling sa-jdi.jar. Avoid
+# overriding that value by using ?=.
+JAVAC_FLAGS?= -g
+
+# You run the new javac using the boot jdk with $(BOOT_JDK)/bin/java $(NEW_JAVAC) ...
+# Use = assignment to be able to override in bootcycle-spec.gmk
+INTERIM_LANGTOOLS_JAR = $(BUILDTOOLS_OUTPUTDIR)/interim_langtools.jar
+INTERIM_LANGTOOLS_ARGS = "-Xbootclasspath/p:$(INTERIM_LANGTOOLS_JAR)" -cp $(INTERIM_LANGTOOLS_JAR)
+NEW_JAVAC   = $(INTERIM_LANGTOOLS_ARGS) com.sun.tools.javac.Main
+NEW_JAVADOC = $(INTERIM_LANGTOOLS_ARGS) jdk.javadoc.internal.tool.Main
+
+# Base flags for RC
+# Guarding this against resetting value. Legacy make files include spec multiple
+# times.
+ifndef RC_FLAGS
+  RC_FLAGS:=
+endif
+
+# Tools adhering to a minimal and common standard of posix compliance.
+AWK:=mawk
+BASENAME:=/usr/bin/basename
+CAT:=/bin/cat
+CCACHE:=
+# CD is going away, but remains to cater for legacy makefiles.
+CD:=cd
+CHMOD:=/bin/chmod
+CODESIGN:=
+COMM:=/usr/bin/comm
+CP:=/bin/cp
+CPIO:=/bin/cpio
+CUT:=/usr/bin/cut
+DATE:=/bin/date
+DIFF:=/usr/bin/diff
+DIRNAME:=/usr/bin/dirname
+DSYMUTIL:=
+FIND:=/usr/bin/find
+FIND_DELETE:=-delete
+ECHO:=/bin/echo
+EGREP:=/bin/grep -E
+FGREP:=/bin/grep -F
+GREP:=/bin/grep
+HEAD:=/usr/bin/head
+LS:=/bin/ls
+LN:=/bin/ln
+MKDIR:=/bin/mkdir
+MV:=/bin/mv
+NAWK:=/usr/bin/nawk
+NICE:=/usr/bin/nice
+PATCH:=/usr/bin/patch
+PRINTF:=/usr/bin/printf
+PWD:=@THEPWDCMD@
+RM:=/bin/rm -f
+RMDIR:=/bin/rmdir
+SED:=/bin/sed
+SH:=/bin/sh
+SORT:=/usr/bin/sort
+TAR:=/bin/tar
+TAIL:=/usr/bin/tail
+TEE:=/usr/bin/tee
+TIME:=/usr/bin/time
+IS_GNU_TIME:=yes
+TR:=/usr/bin/tr
+TOUCH:=/usr/bin/touch
+UNIQ:=/usr/bin/uniq
+WC:=/usr/bin/wc
+XARGS:=/usr/bin/xargs
+ZIPEXE:=/usr/bin/zip
+ZIP:=/usr/bin/zip
+UNZIP:=/usr/bin/unzip
+MT:= 
+RC:= 
+DUMPBIN:= 
+CYGPATH:=
+LDD:=/usr/bin/ldd
+OTOOL:=true
+READELF:=/usr/bin/readelf
+EXPR:=/usr/bin/expr
+FILE:=/usr/bin/file
+HG:=
+OBJCOPY:=/usr/bin/objcopy
+SETFILE:=
+XATTR:=
+JT_HOME:=
+JTREGEXE:=
+XCODEBUILD=
+FIXPATH:=
+
+# Build setup
+ENABLE_JFR=@ENABLE_JFR@
+ENABLE_INTREE_EC=yes
+USE_EXTERNAL_LIBJPEG:=false
+USE_EXTERNAL_LIBGIF:=false
+USE_EXTERNAL_LIBZ:=false
+LIBZIP_CAN_USE_MMAP:=true
+MSVCR_DLL:=
+MSVCP_DLL:=
+
+####################################################
+#
+# INSTALLATION
+#
+
+# Common prefix for all installed files. Defaults to /usr/local,
+# but /opt/myjdk is another common version.
+INSTALL_PREFIX=/usr/local
+
+# Directories containing architecture-dependent files should be relative to exec_prefix
+INSTALL_EXECPREFIX=${prefix}
+
+# java,javac,javah,javap etc are installed here.
+INSTALL_BINDIR=${exec_prefix}/bin
+
+# Read only architecture-independent data
+INSTALL_DATADIR=${datarootdir}
+
+# Root of above.
+INSTALL_DATAROOTDIR=${prefix}/share
+
+# Doc files, other than info and man.
+INSTALL_DOCDIR=${datarootdir}/doc/${PACKAGE_TARNAME}
+
+# Html documentation
+INSTALL_HTMLDIR=${docdir}
+
+# Installing C header files, JNI headers for example.
+INSTALL_INCLUDEDIR=${prefix}/include
+
+# Installing library files....
+INSTALL_INCLUDEDIR=${exec_prefix}/lib
+
+# Executables that other programs run.
+INSTALL_LIBEXECDIR=${exec_prefix}/libexec
+
+# Locale-dependent but architecture-independent data, such as message catalogs.
+INSTALL_LOCALEDIR=${datarootdir}/locale
+
+# Modifiable single-machine data
+INSTALL_LOCALSTATEDIR=${prefix}/var
+
+# Man pages
+INSTALL_MANDIR=${datarootdir}/man
+
+# Modifiable architecture-independent data.
+INSTALL_SHAREDSTATEDIR=${prefix}/com
+
+# Read-only single-machine data
+INSTALL_SYSCONFDIR=${prefix}/etc
+
+####################################################
+#
+# Libraries
+#
+
+USE_EXTERNAL_LCMS:=false
+LCMS_CFLAGS:=
+LCMS_LIBS:=
+
+USE_EXTERNAL_LIBPNG:=false
+PNG_LIBS:=
+PNG_CFLAGS:=
+
+
+####################################################
+#
+# Misc
+#
+
+INCLUDE_SA=true
+
+OS_VERSION_MAJOR:=4
+OS_VERSION_MINOR:=4
+OS_VERSION_MICRO:=0
+
+# Images directory definitions
+JDK_IMAGE_SUBDIR:=jdk
+JRE_IMAGE_SUBDIR:=jre
+
+# Colon left out to be able to override output dir for bootcycle-images
+JDK_IMAGE_DIR=$(IMAGES_OUTPUTDIR)/$(JDK_IMAGE_SUBDIR)
+JRE_IMAGE_DIR=$(IMAGES_OUTPUTDIR)/$(JRE_IMAGE_SUBDIR)
+
+# Test image, as above
+TEST_IMAGE_SUBDIR:=test
+TEST_IMAGE_DIR=$(IMAGES_OUTPUTDIR)/$(TEST_IMAGE_SUBDIR)
+
+# Symbols image
+SYMBOLS_IMAGE_SUBDIR:=symbols
+SYMBOLS_IMAGE_DIR=$(IMAGES_OUTPUTDIR)/$(SYMBOLS_IMAGE_SUBDIR)
+
+# Macosx bundles directory definitions
+JDK_MACOSX_BUNDLE_SUBDIR=jdk-bundle/jdk-$(VERSION_NUMBER).jdk/Contents
+JRE_MACOSX_BUNDLE_SUBDIR=jre-bundle/jre-$(VERSION_NUMBER).jre/Contents
+JDK_MACOSX_BUNDLE_DIR=$(IMAGES_OUTPUTDIR)/$(JDK_MACOSX_BUNDLE_SUBDIR)
+JRE_MACOSX_BUNDLE_DIR=$(IMAGES_OUTPUTDIR)/$(JRE_MACOSX_BUNDLE_SUBDIR)
+
+# This macro is called to allow inclusion of closed source counterparts.
+# Unless overridden in closed sources, it expands to nothing.
+# Usage: This function is called in an open makefile, with the following
+# arguments:
+# $1 the name of the repo, or empty if the top-level repo.
+# $2 the name of the makefile
+define IncludeCustomExtension
+endef
+
+# Include the custom-spec.gmk file if it exists
+-include $(dir /home/elmarce/MarcelStuff/PROJECTS/PHD/APPROX-LOOP/jdk9/9dev/build/linux-x86_64-normal-server-slowdebug/spec.gmk)/custom-spec.gmk
