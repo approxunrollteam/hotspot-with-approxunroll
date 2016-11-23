@@ -1,6 +1,6 @@
 #Modified OpenJDK
 
-Modified OpenJDK that includes our optimization.
+Modified OpenJDK Hostpot v9.0 that includes our optimization.
 
 ## Compiling
 
